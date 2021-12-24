@@ -7,6 +7,8 @@ import { Component, OnInit } from '@angular/core';
 })
 export class NotificationsButtonComponent implements OnInit {
 
+  count: any = 0;
+  
   constructor() { }
 
   ngOnInit(): void {
