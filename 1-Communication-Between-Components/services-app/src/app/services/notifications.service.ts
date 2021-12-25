@@ -6,7 +6,7 @@ import { BehaviorSubject, Observable } from "rxjs";
 })
 export class NotificationsService {
 
-  private count: BehaviorSubject<number> = new BehaviorSubject<number>(10);
+  private count: BehaviorSubject<number> = new BehaviorSubject<number>(0);
 
   count$: Observable<number> = this.count.asObservable();
 
