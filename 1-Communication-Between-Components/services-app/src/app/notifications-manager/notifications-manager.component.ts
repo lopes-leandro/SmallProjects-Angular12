@@ -39,6 +39,8 @@ export class NotificationsManagerComponent implements OnInit {
     });
   }
 
-  resetCount() {}
+  resetCount() {
+    this.notificationsService.setCount(0);
+  }
 
 }
