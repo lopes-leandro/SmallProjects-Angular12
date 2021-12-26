@@ -7,4 +7,10 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'getter-setter-app';
+  
+  _vName: string = '';
+
+  updateVName(event: string) {
+    this._vName = event;
+  }
 }

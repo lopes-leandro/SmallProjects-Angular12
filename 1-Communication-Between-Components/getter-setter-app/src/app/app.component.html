@@ -99,8 +99,8 @@
 
 <div class="content" role="main">
 
-  <app-version-control></app-version-control>
+  <app-version-control (vName)="updateVName($event)"></app-version-control>
 
-  <app-version-control-logs></app-version-control-logs>
+  <app-version-control-logs [vName]="_vName"></app-version-control-logs>
 
 </div>

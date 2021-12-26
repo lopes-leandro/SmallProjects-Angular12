@@ -1,10 +1,10 @@
 <!-- Resources -->
 <h3>Número da Versão</h3>
-<input type="text" placeholder="0.0.0">
+<input type="text" placeholder="0.0.0" [(ngModel)]="name" name="name">
 <p>Use o versionamento semantico (x.x.x)</p>
 
 <div class="card-container">
-    <button class="card card-small" tabindex="0">
+    <button class="card card-small" (click)="getName()" tabindex="0">
         <span>Enviar</span>
     </button>
 </div>

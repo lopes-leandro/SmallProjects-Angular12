@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 
 @Component({
   selector: 'app-version-control',
@@ -7,13 +7,17 @@ import { Component, OnInit } from '@angular/core';
 })
 export class VersionControlComponent implements OnInit {
 
-  _vName: string;
+  public name: string = '';
+  @Output() vName: EventEmitter<string> = new EventEmitter<string>();
 
-  constructor() { 
-    this._vName = '';
-  }
+  constructor() { }
 
   ngOnInit(): void {
+  }
+
+  getName() {
+    if (!this.name.trim()) return;
+    this.vName.emit(this.name.trim());
   }
 
 }

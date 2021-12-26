@@ -4,6 +4,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { AppComponent } from './app.component';
 import { VersionControlComponent } from './version-control/version-control.component';
 import { VersionControlLogsComponent } from './version-control-logs/version-control-logs.component';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -12,7 +13,8 @@ import { VersionControlLogsComponent } from './version-control-logs/version-cont
     VersionControlLogsComponent
   ],
   imports: [
-    BrowserModule
+    BrowserModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

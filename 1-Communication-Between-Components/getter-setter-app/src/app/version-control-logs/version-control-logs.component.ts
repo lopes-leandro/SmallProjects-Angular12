@@ -13,7 +13,6 @@ export class VersionControlLogsComponent implements OnInit {
   get vName(){
     return this._vName;
   };
-
   set vName(name: string) {
     if (!name) return;
     if (!this._vName) {
