@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { GalleryComponent } from "./gallery/gallery.component";
 
 @Component({
   selector: 'app-root',
@@ -7,4 +8,17 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'template-variable-app';
+
+  async adicionarNovaImagem(gallery: GalleryComponent) {
+    const url = await gallery.generateImage();
+    if (url !== '') {
+      gallery.pictures.unshift(url)      
+    }
+    
+  }
+
+  removerPrimeiraImagem(gallery: GalleryComponent) {
+    gallery.pictures.shift();
+    
+  }
 }

@@ -20,14 +20,14 @@
 <div class="content" role="main">
 
   <div class="card-container">
-    <button class="card card-small blue" tabindex="0">
+    <button class="card card-small blue" (click)="adicionarNovaImagem(gallery)" tabindex="0">
       <svg class="material-icons" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
         <path d="M19 13h-6v6h-2v-6H5v-2h6V5h2v6h6v2z" />
       </svg>
       <span>Adicionar Imagem</span>
     </button>
 
-    <button class="card card-small red" tabindex="0">
+    <button class="card card-small red" (click)="removerPrimeiraImagem(gallery)" tabindex="0">
       <svg class="material-icons" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
         <path d="M19 13h-6v6h-2v-6H5v-2h6V5h2v6h6v2z" />
       </svg>
