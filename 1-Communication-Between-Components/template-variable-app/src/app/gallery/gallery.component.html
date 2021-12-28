@@ -1,1 +1,5 @@
-<p>gallery works!</p>
+<div style="display: flex; flex-direction: row; width: 100%; flex-wrap: wrap; justify-content: center;">
+    <div *ngFor="let picture of pictures" style="display: block; padding: 8px;">
+        <img src="{{picture}}"  alt="" style="image-rendering: auto;">
+    </div>
+</div>
