@@ -20,18 +20,20 @@
 <div class="content" role="main">
 
   <div class="card-container">
-    <button class="card card-small blue" (click)="setComponentType()" tabindex="0">
+    <button class="card card-small blue" (click)="setComponentType(componentTypes.Component1)" tabindex="0">
       <svg class="material-icons" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
         <path d="M19 13h-6v6h-2v-6H5v-2h6V5h2v6h6v2z" />
       </svg>
       <span>Componente 1</span>
     </button>
 
-    <button class="card card-small red" (click)="setComponentType()" tabindex="0">
+    <button class="card card-small red" (click)="setComponentType(componentTypes.Component2)" tabindex="0">
       <svg class="material-icons" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
         <path d="M19 13h-6v6h-2v-6H5v-2h6V5h2v6h6v2z" />
       </svg>
       <span>Componente 2</span>
     </button>
   </div>
+
+  <app-component-card [type]="selectedComponentType"></app-component-card>
 </div>

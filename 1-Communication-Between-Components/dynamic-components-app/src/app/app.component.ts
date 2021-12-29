@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { ComponentCardType } from './constants/component-card-type';
 
 @Component({
   selector: 'app-root',
@@ -7,4 +8,10 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'dynamic-components-app';
+  selectedComponentType!: ComponentCardType;
+  componentTypes = ComponentCardType;
+
+  setComponentType(type: ComponentCardType){
+    this.selectedComponentType = type;
+  }
 }
