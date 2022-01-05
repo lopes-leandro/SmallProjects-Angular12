@@ -6,5 +6,6 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-  title = 'ckd-drag-drop-app';
+  title = 'Toque em uma pasta para ver os arquivos!';
+  titleMenu = 'Angular CDK - Drag-And-Drop';
 }

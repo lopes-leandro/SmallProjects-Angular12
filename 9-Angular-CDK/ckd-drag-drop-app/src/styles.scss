@@ -74,6 +74,14 @@ p {
   align-items: center;
 }
 
+.content {
+    &__container {
+      width: 100%;
+      display: flex;
+      justify-content: center;
+    }
+  }
+
 svg.material-icons {
   height: 24px;
   width: auto;

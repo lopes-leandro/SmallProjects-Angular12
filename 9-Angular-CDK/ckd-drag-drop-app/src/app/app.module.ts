@@ -3,10 +3,12 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { AppComponent } from './app.component';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
+import { FoldersListComponent } from './folders-list/folders-list.component';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    FoldersListComponent
   ],
   imports: [
     BrowserModule,
