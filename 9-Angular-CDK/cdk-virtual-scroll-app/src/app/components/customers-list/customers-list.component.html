@@ -1,5 +1,5 @@
-<div class="list list-group">
-    <div class="list__item list-group-item" *ngFor="let item of listItems">
+<cdk-virtual-scroll-viewport class="list list-group" [itemSize]="110">
+    <div class="list__item list-group-item" *cdkVirtualFor="let item of listItems">
         <div class="list__item__primary">
             <div class="list__item__primary__info">
                 {{item.name}}
@@ -17,4 +17,4 @@
             </div>
         </div>
     </div>
-</div>
+</cdk-virtual-scroll-viewport>
