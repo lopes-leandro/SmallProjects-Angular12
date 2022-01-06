@@ -76,6 +76,7 @@ p {
 
 .content__terminal {
   display: flex;
+  flex-wrap: wrap;
   width: 100%;
   flex-direction: row;
   justify-content: space-around;
@@ -184,10 +185,10 @@ a:hover {
 
 .terminal {
   position: relative;
-  width: 80%;
+  width: 300px;
   max-width: 400px;
   height: 250px;
-  border-radius: 6px;
+  // border-radius: 6px;
   padding-top: 45px;
   margin-top: 8px;
   overflow-y: scroll;
