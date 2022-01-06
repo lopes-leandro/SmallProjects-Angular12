@@ -216,6 +216,10 @@ a:hover {
   color: rgb(14, 230, 6);
   padding: 0 1rem 1rem;
   margin: 0;
+  word-wrap: break-word;
+  white-space: pre-wrap;
+  width: 280px;
+  overflow: hidden;
 }
 
 .circle-link {

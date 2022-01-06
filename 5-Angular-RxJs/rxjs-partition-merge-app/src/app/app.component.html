@@ -33,16 +33,15 @@
   <!-- Terminals -->
   <div class="content__terminal">    
     <div class="terminal">
-      <pre *ngFor="let item of inputStreamData">{{item}}</pre>
-      <pre *ngFor="let item of inputSerieStreamData">{{item}}</pre>
+      <pre *ngFor="let item of combinedStreamData">Título: {{item.title}} - Tipo: {{item.type}}</pre>
     </div>
     <div class="terminal">
-      <pre *ngFor="let item of outputStreamData">{{item}}</pre>
-
+      <pre class="text-center">Filmes</pre>
+      <pre></pre>
     </div>
     <div class="terminal">
-      <pre *ngFor="let item of outputStreamData">{{item}}</pre>
-
+      <pre class="text-center">Séries</pre>
+      <pre></pre>
     </div>
   </div>
 
