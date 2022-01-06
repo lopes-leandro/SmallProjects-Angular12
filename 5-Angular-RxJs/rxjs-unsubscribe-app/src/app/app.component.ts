@@ -8,7 +8,7 @@ import { map, merge } from 'rxjs/operators';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-  title = 'Angular 12 com RxJs - Operadores Map / Merge';
+  title = 'Angular 12 com RxJs - Vazamento de Memório com Subscribe';
 
   subscription: Subscription | null = null;
   inputStreamData = ['bizhub C3110', 'bizhub C3351', 'bizhub C3350', 'bizhub C266', 'bizhub C221'];
