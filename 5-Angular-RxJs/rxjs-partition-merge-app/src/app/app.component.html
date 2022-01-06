@@ -37,11 +37,11 @@
     </div>
     <div class="terminal">
       <pre class="text-center">Filmes</pre>
-      <pre></pre>
+      <pre *ngFor="let filme of filmes">{{filme}}</pre>
     </div>
     <div class="terminal">
       <pre class="text-center">Séries</pre>
-      <pre></pre>
+      <pre *ngFor="let serie of series">{{serie}}</pre>
     </div>
   </div>
 
