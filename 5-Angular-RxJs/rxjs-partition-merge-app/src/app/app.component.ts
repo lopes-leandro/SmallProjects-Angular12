@@ -1,6 +1,5 @@
 import { Component } from '@angular/core';
-import { interval, Subscription } from 'rxjs';
-import { map, merge } from 'rxjs/operators';
+import { interval, partition, merge, Subscription } from 'rxjs';
 
 @Component({
   selector: 'app-root',
@@ -72,7 +71,7 @@ export class AppComponent {
   outputStreamData: any[] = [];
 
   public startStream(): void {
-    
+
   }
 
   public stopStream(): void {
