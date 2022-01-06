@@ -1,3 +1,4 @@
+import { icon } from "@fortawesome/fontawesome-svg-core";
 import { IntfFolder } from "../interfaces/intf-folder";
 
 export const APP_DATA: IntfFolder[] = [
@@ -5,13 +6,16 @@ export const APP_DATA: IntfFolder[] = [
         name: 'Trabalho',
         files: [
             {
-                name: 'ficha.docx'
+                name: 'ficha.docx',
+                icon: null
             },
             {
-                name: 'vagas.pdf'
+                name: 'vagas.pdf',
+                icon: null
             },
             {
-                name: 'curriculum.pdf'
+                name: 'curriculum.pdf',
+                icon: null
             }
         ]
     },
@@ -19,13 +23,16 @@ export const APP_DATA: IntfFolder[] = [
         name: 'Pessoal',
         files: [
             {
-                name: 'atestado-de-nascimento.pdf'
+                name: 'atestado-de-nascimento.pdf',
+                icon: null
             },
             {
-                name: 'documento-cpf-rg.pdf'
+                name: 'documento-cpf-rg.pdf',
+                icon: null
             },
             {
-                name: 'CNH.pdf'
+                name: 'CNH.pdf',
+                icon: null
             }
         ]
     },
@@ -33,13 +40,16 @@ export const APP_DATA: IntfFolder[] = [
         name: 'Certificações',
         files: [
             {
-                name: 'Microsoft-AZ-900.pdf'
+                name: 'Microsoft-AZ-900.pdf',
+                icon: null
             },
             {
-                name: 'Microsoft-AI-900.pdf'
+                name: 'Microsoft-AI-900.pdf',
+                icon: null
             },
             {
-                name: 'Scrum-Fundamentals.pdf'
+                name: 'Scrum-Fundamentals.pdf',
+                icon: null
             }
         ]
     },
@@ -47,13 +57,16 @@ export const APP_DATA: IntfFolder[] = [
         name: 'Livros',
         files: [
             {
-                name: 'Nórdicos-Contos-&-Lendas.pdf'
+                name: 'Nórdicos-Contos-&-Lendas.pdf',
+                icon: null
             },
             {
-                name: 'Nórdicos-Mitos-&-Sagas.pdf'
+                name: 'Nórdicos-Mitos-&-Sagas.pdf',
+                icon: null
             },
             {
-                name: 'Call-Workbook-CCAA.pdf'
+                name: 'Call-Workbook-CCAA.pdf',
+                icon: null
             }
         ]
     },

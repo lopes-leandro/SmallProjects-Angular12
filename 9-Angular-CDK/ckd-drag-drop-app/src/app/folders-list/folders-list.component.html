@@ -1,8 +1,10 @@
 <div class="folders">
     <div class="folders__list">
-        Lista de Pastas
+        <app-folder [ngClass]="{
+            'folders__list__folder--selected': folder === selectedFolder
+          }" (click)="toggleFolderSelect(folder)" class="folders__list__folder" [folder]="folder" *ngFor="let folder of folders"></app-folder>
     </div>
     <div class="folders__selected-folder-files" *ngIf="selectedFolder">
-        Lista de Arquivos
+        <app-file class="folders__selected-folder-files__file" [file]="file" *ngFor="let file of selectedFolder.files"></app-file>
     </div>
 </div>
