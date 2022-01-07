@@ -4,9 +4,9 @@
         <span>Iniciar Fluxo</span>
     </button>
 
-    <button class="btn btn-secondary btn-lg m-3" (click)="stopStream()" tabindex="0">
+    <!-- <button class="btn btn-secondary btn-lg m-3" (click)="stopStream()" tabindex="0">
         <span>Parar Fluxo</span>
-    </button>
+    </button> -->
 </div>
 
 <!-- Terminals -->
@@ -19,7 +19,7 @@
         <pre *ngFor="let item of inputStreamData3">{{item}}</pre>
     </div>
     <div class="terminal">
-        <pre *ngFor="let item of outputStreamData">{{item}}</pre>
+        <pre *ngFor="let item of streamOutput$ | async">{{item}}</pre>
 
     </div>
 </div>
