@@ -6,5 +6,5 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-  title = 'rxjs-unsubscribe-multiple-subscribe-app';
+  title = 'Angular 12 com RxJs - Cancelando Múltiplos Subscribe (usando takeWhile)';
 }
