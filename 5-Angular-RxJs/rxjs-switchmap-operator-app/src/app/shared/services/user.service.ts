@@ -15,24 +15,40 @@ export class UserService {
 
   constructor(private http: HttpClient) { }
 
-  getUser(userId: string): Observable<UserInterface | any>  {
-    return this.http.get<{results: UserInterface[]}>(this.usersApiUrl).pipe(
+  getUser(userId: string): Observable<UserInterface | any> {
+    return this.http.get<{ results: UserInterface[] }>(this.usersApiUrl).pipe(
       map((resp) => resp.results.find((user) => user.login.uuid === userId))
     );
   }
 
   getSimilarUser(userId?: string): Observable<UserInterface[]> {
-    return this.http.get<{results: UserInterface[]}>(this.usersApiUrl).pipe(
+    return this.http.get<{ results: UserInterface[] }>(this.usersApiUrl).pipe(
       map((resp) => resp.results.filter(user => {
-        console.log(user);        
+        // console.log(user);        
         return user.login.uuid !== userId;
       })
-    )
+      )
     )
   }
 
+  searchUsers(username: string): Observable<UserInterface[]> {
+    return this.getSimilarUser().pipe(map(users => {
+      if (!username) {
+        return users
+      }
+      return users.filter(user => {
+        const query = username.toLowerCase();
+        return (
+          user.email.toLowerCase().includes(query) ||
+          user.name.first.toLowerCase().includes(query) ||
+          user.name.last.toLowerCase().includes(query)
+        )
+      })
+    }))
+  }
+
   getDataComments(): Observable<string> {
-    return this.http.get<{__comments: string}>(this.commentsJsonUrl).pipe(
+    return this.http.get<{ __comments: string }>(this.commentsJsonUrl).pipe(
       map((resp) => resp.__comments)
     )
   }

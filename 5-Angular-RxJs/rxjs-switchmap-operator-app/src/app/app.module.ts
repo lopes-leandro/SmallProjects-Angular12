@@ -8,6 +8,7 @@ import { LoaderComponent } from './shared/components/loader/loader.component';
 import { UserCardComponent } from './shared/components/user-card/user-card.component';
 import { HomeComponent } from './home/home.component';
 import { UserDetailComponent } from './user-detail/user-detail.component';
+import { ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -21,7 +22,8 @@ import { UserDetailComponent } from './user-detail/user-detail.component';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    HttpClientModule
+    HttpClientModule,
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
