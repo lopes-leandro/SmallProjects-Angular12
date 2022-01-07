@@ -1,7 +1,7 @@
 import { Component, OnDestroy, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { Observable, of } from 'rxjs';
-import { takeWhile } from 'rxjs/operators';
+import { mergeMap, takeWhile } from 'rxjs/operators';
 import { UserInterface } from '../shared/interfaces/user.interface';
 import { UserService } from '../shared/services/user.service';
 
@@ -12,25 +12,37 @@ import { UserService } from '../shared/services/user.service';
 })
 export class UserDetailComponent implements OnInit, OnDestroy {
 
-  user$: Observable<UserInterface | any>;
-  similarUsers$!: Observable<UserInterface[]>;
+  user: UserInterface | any;
+  similarUsers: UserInterface[] | any;
   isStreamActive: boolean;
 
   constructor(
     private userService: UserService,
-    private route: ActivatedRoute) { 
-      this.isStreamActive = false;
-      this.user$ = of(undefined);
-    }
+    private route: ActivatedRoute) {
+    this.isStreamActive = false;
+  }
 
   ngOnInit(): void {
     this.isStreamActive = true;
     this.route.paramMap.pipe(
-      takeWhile(() => !! this.isStreamActive)
-    ).subscribe((params) => {
-      const userId = params.get('uuid');
-      this.similarUsers$ = this.userService.getSimilarUser(userId as string);
-      this.user$ = this.userService.getUser(userId as string);
+      takeWhile(() => !!this.isStreamActive),
+      mergeMap(params => {
+        this.user = null;
+        this.similarUsers = null;
+        const userId = params.get('uuid');
+        return this.userService.getUser(userId as string)
+          .pipe(
+            mergeMap((user: UserInterface) => {
+              this.user = user;
+              return this.userService.getSimilarUser(userId as string)
+            })
+          );
+      })
+    ).subscribe((similarUsers: UserInterface[]) => {
+      // setTimeout(() => {
+      //   this.similarUsers = similarUsers
+      // }, 3000);
+      this.similarUsers = similarUsers
     })
   }
 
