@@ -1,0 +1,22 @@
+<!-- Controlls -->
+<div class="card-container">
+    <button class="btn btn-primary btn-lg m-3" (click)="startStream()" tabindex="0">
+        <span>Iniciar Fluxo</span>
+    </button>
+
+    <button class="btn btn-secondary btn-lg m-3" (click)="stopStream()" tabindex="0">
+        <span>Parar Fluxo</span>
+    </button>
+</div>
+
+<!-- Terminals -->
+<div class="content__terminal">
+    <div class="terminal">
+        <pre *ngFor="let item of inputStreamData">{{item}}</pre>
+        <pre *ngFor="let item of inputSerieStreamData">{{item}}</pre>
+    </div>
+    <div class="terminal">
+        <pre *ngFor="let item of outputStreamData">{{item}}</pre>
+
+    </div>
+</div>
