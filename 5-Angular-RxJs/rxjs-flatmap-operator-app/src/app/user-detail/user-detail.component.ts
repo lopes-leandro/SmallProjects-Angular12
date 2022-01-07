@@ -1,6 +1,6 @@
 import { Component, OnDestroy, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
-import { Observable } from 'rxjs';
+import { Observable, of } from 'rxjs';
 import { takeWhile } from 'rxjs/operators';
 import { UserInterface } from '../shared/interfaces/user.interface';
 import { UserService } from '../shared/services/user.service';
@@ -12,7 +12,7 @@ import { UserService } from '../shared/services/user.service';
 })
 export class UserDetailComponent implements OnInit, OnDestroy {
 
-  user$!: Observable<UserInterface | undefined>;
+  user$: Observable<UserInterface | any>;
   similarUsers$!: Observable<UserInterface[]>;
   isStreamActive: boolean;
 
@@ -20,6 +20,7 @@ export class UserDetailComponent implements OnInit, OnDestroy {
     private userService: UserService,
     private route: ActivatedRoute) { 
       this.isStreamActive = false;
+      this.user$ = of(undefined);
     }
 
   ngOnInit(): void {

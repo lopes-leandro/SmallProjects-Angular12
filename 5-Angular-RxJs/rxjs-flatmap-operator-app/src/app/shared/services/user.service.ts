@@ -14,7 +14,7 @@ export class UserService {
 
   constructor(private http: HttpClient) { }
 
-  getUser(userId: string): Observable<UserInterface | undefined> {
+  getUser(userId: string): Observable<UserInterface | any>  {
     return this.http.get<{results: UserInterface[]}>(this.usersApiUrl).pipe(
       map((resp) => resp.results.find((user) => user.login.uuid === userId))
     );

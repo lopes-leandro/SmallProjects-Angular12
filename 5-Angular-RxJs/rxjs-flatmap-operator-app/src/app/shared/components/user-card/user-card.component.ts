@@ -9,7 +9,7 @@ import { UserInterface } from '../../interfaces/user.interface';
 })
 export class UserCardComponent implements OnInit {
 
-  @Input('user') user!: UserInterface;
+  @Input('user') user: UserInterface | any;
 
   constructor(private router: Router) { }
 
@@ -17,7 +17,7 @@ export class UserCardComponent implements OnInit {
   }
 
   cardClicked() {
-    this.router.navigate([`/user/${this.user.login.uuid}`])
+    this.router.navigate([`/user/${this.user?.login.uuid}`])
   }
 
 }
