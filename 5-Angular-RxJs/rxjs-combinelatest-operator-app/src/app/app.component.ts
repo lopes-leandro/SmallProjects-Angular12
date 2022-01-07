@@ -6,5 +6,5 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-  title = 'rxjs-combinelatest-operator-app';
+  title = 'Angular 12 com RxJs - Assinar Vários Fluxos Com combineLatest ';
 }
