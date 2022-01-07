@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnDestroy, OnInit } from '@angular/core';
 import { interval, Subscription } from 'rxjs';
 import { map, merge } from 'rxjs/operators';
 @Component({
@@ -6,9 +6,13 @@ import { map, merge } from 'rxjs/operators';
   templateUrl: './home.component.html',
   styleUrls: ['./home.component.scss']
 })
-export class HomeComponent implements OnInit {
+export class HomeComponent implements OnInit, OnDestroy {
 
   constructor() { }
+
+  ngOnDestroy(): void {
+    this.stopStream();
+  }
 
   ngOnInit(): void {
   }
@@ -34,6 +38,7 @@ export class HomeComponent implements OnInit {
       )
       .subscribe(element => {
         this.outputStreamData.push(element);
+        console.log(`transmissão de saída: ${element}`);        
       });
   }
 
