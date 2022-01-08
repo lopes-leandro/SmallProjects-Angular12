@@ -1,6 +1,6 @@
 import { Component, OnDestroy, OnInit } from '@angular/core';
 import { FormControl, FormGroup } from '@angular/forms';
-import { switchMap, takeWhile } from 'rxjs/operators';
+import { debounceTime, switchMap, takeWhile } from 'rxjs/operators';
 import { UserInterface } from '../shared/interfaces/user.interface';
 import { UserService } from '../shared/services/user.service';
 
@@ -31,10 +31,12 @@ export class HomeComponent implements OnInit, OnDestroy {
       .get('username')?.valueChanges
       .pipe(
         takeWhile(() => !!this.isStreamActive),
-        switchMap((query) => this.userService.searchUsers(query))
+        debounceTime(600),
+        // switchMap((query) => this.userService.searchUsers(query))
       )
       .subscribe((users) => {    
-        this.users = users;
+        // this.users = users;
+        this.searchUsers();
       })
   }
 
@@ -44,7 +46,6 @@ export class HomeComponent implements OnInit, OnDestroy {
 
   searchUsers() {
     const query = this.searchForm.get('username')?.value;
-    console.log(query);
     this.userService.searchUsers(query).subscribe((users) => {
       this.users = users;
     })
